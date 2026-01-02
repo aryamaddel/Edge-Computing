@@ -1,252 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>F1 Racing Hub - Edge Computing Assignment</title>
-    <meta
-      name="description"
-      content="Formula 1 Racing Hub - A dynamic website showcasing the thrill of F1 racing"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Animated Background -->
-    <div class="background-animation">
-      <div class="grid-lines"></div>
-      <div class="racing-line"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge Computing Assignment</title>
+    <meta name="description" content="Edge Computing Assignment - Dynamic Photo Carousel">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>Edge Computing Assignment</h1>
+            <div class="info">
+                <p class="name">Arya Maddel</p>
+                <p class="prn">PRN: 1012412074</p>
+            </div>
+        </header>
+
+        <!-- Dynamic Time Display -->
+        <div class="dynamic-section">
+            <div class="time-card">
+                <p class="label">Current Time</p>
+                <p class="time" id="currentTime"></p>
+                <p class="date" id="currentDate"></p>
+            </div>
+        </div>
+
+        <!-- Photo Carousel -->
+        <section class="carousel-section">
+            <h2>Photo Gallery</h2>
+            <div class="carousel">
+                <button class="carousel-btn prev" aria-label="Previous photo">‹</button>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop" alt="Technology 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop" alt="Technology 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop" alt="Technology 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop" alt="Technology 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop" alt="Technology 5">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" aria-label="Next photo">›</button>
+            </div>
+            <div class="carousel-indicators" id="indicators"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Edge Computing Assignment 1 - 2026</p>
+        </footer>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="logo">
-          <span class="logo-text">F1</span>
-          <span class="logo-subtext">RACING HUB</span>
-        </div>
-        <div class="nav-links">
-          <a href="#home" class="nav-link active">Home</a>
-          <a href="#gallery" class="nav-link">Gallery</a>
-          <a href="#about" class="nav-link">About</a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="badge-icon">🏁</span>
-          <span id="dynamic-time" class="badge-text"></span>
-        </div>
-        <h1 class="hero-title">
-          <span class="title-main">FORMULA 1</span>
-          <span class="title-sub">Racing Excellence</span>
-        </h1>
-        <div class="hero-info">
-          <div class="info-card">
-            <div class="info-label">Student Name</div>
-            <div class="info-value" id="student-name">Arya Maddel</div>
-          </div>
-          <div class="info-card">
-            <div class="info-label">PRN Number</div>
-            <div class="info-value" id="prn-number">1012412074</div>
-          </div>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-value" id="visit-count">0</div>
-            <div class="stat-label">Page Visits</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value" id="current-speed">0</div>
-            <div class="stat-label">KM/H</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value" id="lap-time">0:00</div>
-            <div class="stat-label">Time on Site</div>
-          </div>
-        </div>
-        <!-- Lewis Hamilton Tribute -->
-        <div class="hamilton-quote">
-          <div class="quote-icon">🏆</div>
-          <blockquote id="hamilton-quote" class="quote-text"></blockquote>
-          <div class="quote-author">— Sir Lewis Hamilton</div>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <div class="scroll-arrow"></div>
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery-section">
-      <div class="section-header">
-        <h2 class="section-title">F1 Gallery</h2>
-        <p class="section-subtitle">Explore the Speed & Glory</p>
-      </div>
-
-      <div class="carousel-container">
-        <button class="carousel-btn prev" id="prevBtn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-
-        <div class="carousel">
-          <div class="carousel-track" id="carouselTrack">
-            <div class="carousel-slide active">
-              <img
-                src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1200&h=800&fit=crop"
-                alt="F1 Car Racing"
-                loading="lazy"
-              />
-              <div class="slide-overlay">
-                <h3 class="slide-title">Speed Demon</h3>
-                <p class="slide-description">
-                  The pinnacle of motorsport engineering
-                </p>
-              </div>
-            </div>
-            <div class="carousel-slide">
-              <img
-                src="https://images.unsplash.com/photo-1551958219-acbc608c6377?w=1200&h=800&fit=crop"
-                alt="F1 Pit Stop"
-                loading="lazy"
-              />
-              <div class="slide-overlay">
-                <h3 class="slide-title">Pit Perfection</h3>
-                <p class="slide-description">
-                  2-second tire changes that win races
-                </p>
-              </div>
-            </div>
-            <div class="carousel-slide">
-              <img
-                src="https://images.unsplash.com/photo-1594535182308-8ffefbb661e1?w=1200&h=800&fit=crop"
-                alt="F1 Track"
-                loading="lazy"
-              />
-              <div class="slide-overlay">
-                <h3 class="slide-title">Circuit Glory</h3>
-                <p class="slide-description">Iconic tracks around the world</p>
-              </div>
-            </div>
-            <div class="carousel-slide">
-              <img
-                src="https://images.unsplash.com/photo-1566577134770-3d85bb3a9cc4?w=1200&h=800&fit=crop"
-                alt="F1 Cockpit"
-                loading="lazy"
-              />
-              <div class="slide-overlay">
-                <h3 class="slide-title">Driver's View</h3>
-                <p class="slide-description">Inside the cockpit at 300+ km/h</p>
-              </div>
-            </div>
-            <div class="carousel-slide">
-              <img
-                src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=1200&h=800&fit=crop"
-                alt="F1 Victory"
-                loading="lazy"
-              />
-              <div class="slide-overlay">
-                <h3 class="slide-title">Victory Lane</h3>
-                <p class="slide-description">Champions are made here</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <button class="carousel-btn next" id="nextBtn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M9 18L15 12L9 6"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-      </div>
-
-      <div class="carousel-indicators" id="indicators"></div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-      <div class="about-container">
-        <div class="about-content">
-          <h2 class="about-title">About This Project</h2>
-          <p class="about-text">
-            This website is created as part of the Edge Computing assignment for
-            TY CSE. It showcases a modern, responsive design inspired by the
-            speed and precision of Formula 1 racing.
-          </p>
-          <div class="tech-stack">
-            <div class="tech-item">
-              <span class="tech-icon">⚡</span>
-              <span class="tech-name">HTML5</span>
-            </div>
-            <div class="tech-item">
-              <span class="tech-icon">🎨</span>
-              <span class="tech-name">CSS3</span>
-            </div>
-            <div class="tech-item">
-              <span class="tech-icon">✨</span>
-              <span class="tech-name">JavaScript</span>
-            </div>
-            <div class="tech-item">
-              <span class="tech-icon">☁️</span>
-              <span class="tech-name">Vercel</span>
-            </div>
-          </div>
-        </div>
-        <div class="about-features">
-          <div class="feature-card">
-            <div class="feature-icon">📱</div>
-            <h3 class="feature-title">Responsive Design</h3>
-            <p class="feature-desc">Optimized for all devices</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔄</div>
-            <h3 class="feature-title">Dynamic Content</h3>
-            <p class="feature-desc">Real-time updates on every visit</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🎭</div>
-            <h3 class="feature-title">Modern UI</h3>
-            <p class="feature-desc">Glassmorphism & animations</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-content">
-        <p class="footer-text">Edge Computing Assignment 1 - TY CSE</p>
-        <p class="footer-subtext">Hosted on Vercel Cloud Platform</p>
-        <div class="footer-links">
-          <span class="footer-link">© 2026</span>
-          <span class="footer-separator">•</span>
-          <span class="footer-link" id="current-date"></span>
-        </div>
-      </div>
-    </footer>
-
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
